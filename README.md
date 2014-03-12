@@ -25,3 +25,9 @@ You can find everything [here](http://www.yuml.me/diagram/scruffy/class/samples)
 ## License
 
 Free BSD 3 aka do what you want, it is your business.
+
+## To Do
+
+* Add support to file format png/jpg/pdf/svg/json
+* Add support to diagram style scruffy/boring/plain
+* Add support to diagram type class/activity/usecase
