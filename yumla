@@ -5,7 +5,7 @@
 ## Login   <alois@epitech.net>
 ##
 ## Started on  Wed Mar 12 16:58:23 2014 alois
-## Last update Wed Mar 12 23:11:17 2014 alois
+## Last update Wed Mar 12 23:17:56 2014 alois
 ##
 
 URL="http://yuml.me/diagram/scruffy/class/"
@@ -28,7 +28,7 @@ throwReadError() {
 	echo "$@ : does not exists"
 	exit 1
     elif [ ! -r $@ ]; then
-	echo "$@: can not read"
+	echo "$@ : can not read"
 	exit 2
     fi
 }
@@ -43,7 +43,7 @@ readFile() {
 
 printUsage() {
     if [ -z "$@" ]; then
-	echo "[USAGE] : ./yumla.sh ./path/to/yourScript.yuml"
+	echo "[USAGE] : ./yumla.sh ./path/to/uml.yuml"
 	exit 1
     fi
 }
