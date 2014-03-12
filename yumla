@@ -1,0 +1,54 @@
+#!/bin/sh
+## yumla.sh for yumla in /home/alois/Code/sh/yumla
+##
+## Made by alois
+## Login   <alois@epitech.net>
+##
+## Started on  Wed Mar 12 16:58:23 2014 alois
+## Last update Wed Mar 12 23:11:17 2014 alois
+##
+
+URL="http://yuml.me/diagram/scruffy/class/"
+UML=""
+DEL=", "
+EXT=".png" # png|pdf|jpg|json|svg
+
+downloadUML() {
+    wget -nv "$URL$UML" -O "$file$EXT"
+}
+
+skipComment() {
+    if [ ! $1 = "//" ]; then
+	UML=$UML$@$DEL
+    fi
+}
+
+throwReadError() {
+    if [ ! -f $@ ]; then
+	echo "$@ : does not exists"
+	exit 1
+    elif [ ! -r $@ ]; then
+	echo "$@: can not read"
+	exit 2
+    fi
+}
+
+readFile() {
+    throwReadError $@
+    while read line
+    do
+	skipComment $line
+    done <"$file"
+}
+
+printUsage() {
+    if [ -z "$@" ]; then
+	echo "[USAGE] : ./yumla.sh ./path/to/yourScript.yuml"
+	exit 1
+    fi
+}
+
+file="$1"
+printUsage $file
+readFile $file
+downloadUML
