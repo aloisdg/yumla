@@ -5,7 +5,7 @@
 ## Login   <alois@epitech.net>
 ##
 ## Started on  Wed Mar 12 16:58:23 2014 alois
-## Last update Mon Mar 17 23:27:26 2014 alois
+## Last update Mon Mar 17 23:36:04 2014 alois
 ##
 
 URL="http://yuml.me/diagram/"
@@ -17,7 +17,7 @@ FORMAT=png
 TYPE=class
 STYLE=scruffy
 INPUT=
-OUTPUT=
+OUTPUT=yuml
 
 removeLastChar() {
     UML=${UML%?}
@@ -28,7 +28,6 @@ formatURL() {
 }
 
 downloadUML() {
-    echo "$URL$UML.$FORMAT"
     if [ ! $VERBOSE ]; then
     	wget -nv "$URL$UML.$FORMAT" -O "$OUTPUT.$FORMAT"
     else
@@ -125,5 +124,4 @@ removeLastChar
 removeLastChar
 downloadUML
 
-echo "verbose = $VERBOSE\nformat = $FORMAT\ntype = $TYPE\nstyle = $STYLE"
-echo "[done]"
+echo "$OUTPUT.$FORMAT is ready to use"
