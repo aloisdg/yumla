@@ -5,7 +5,7 @@
 ## Login   <alois@epitech.net>
 ##
 ## Started on  Wed Mar 12 16:58:23 2014 alois
-## Last update Mon Mar 17 18:37:23 2014 alois
+## Last update Mon Mar 17 23:27:26 2014 alois
 ##
 
 URL="http://yuml.me/diagram/"
@@ -62,7 +62,7 @@ readFile() {
 
 printUsage() {
     if [ -z "$@" ]; then
-	echo "[USAGE] : ./yumla ./path/to/uml.yuml"
+	echo "[USAGE] : ./yumla -i ./path/to/uml.yuml -o uml"
 	exit 1
     fi
 }
